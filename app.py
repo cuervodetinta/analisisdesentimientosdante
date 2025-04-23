@@ -15,19 +15,21 @@ st.markdown("""
         background-color: #333333;
         color: white;
     }
-    
+
     /* Personalización del sidebar */
-    .css-1v3fvcr {
-        color: #c71585;  /* Rosado oscuro para los encabezados del sidebar */
-    }
-    /* Cambiar fondo del sidebar */
     .css-1d391kg {
         background-color: #ffb6c1 !important;  /* Rosado clarito */
     }
+
+    /* Personalizar el color del texto en el sidebar */
+    .css-1v3fvcr {
+        color: #c71585;  /* Rosado oscuro para los encabezados del sidebar */
+    }
+
     .css-1d391kg .sidebar-content {
         color: #c71585 !important;  /* Rosado oscuro para el texto */
     }
-    .css-1d391kg .stImage {
+    .stImage {
         display: block;
         margin-left: auto;
         margin-right: auto;
