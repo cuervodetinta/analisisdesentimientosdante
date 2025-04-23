@@ -17,17 +17,17 @@ st.markdown("""
     }
     
     /* Personalización del sidebar */
-    .css-1d391kg {  /* Esta clase afecta al fondo del sidebar */
+    .css-1v3fvcr {
+        color: #c71585;  /* Rosado oscuro para los encabezados del sidebar */
+    }
+    /* Cambiar fondo del sidebar */
+    .css-1d391kg {
         background-color: #ffb6c1 !important;  /* Rosado clarito */
     }
     .css-1d391kg .sidebar-content {
         color: #c71585 !important;  /* Rosado oscuro para el texto */
     }
-    .css-1v3fvcr {
-        color: #c71585;  /* Rosado oscuro para los encabezados del sidebar */
-    }
-
-    .sidebar .stImage {
+    .css-1d391kg .stImage {
         display: block;
         margin-left: auto;
         margin-right: auto;
