@@ -17,11 +17,11 @@ st.markdown("""
     }
     
     /* Personalización del sidebar */
-    .css-18e3th9 {
-        background-color: #ffb6c1;  /* Rosado clarito */
+    .css-1d391kg {  /* Esta clase afecta al fondo del sidebar */
+        background-color: #ffb6c1 !important;  /* Rosado clarito */
     }
-    .css-18e3th9 .sidebar-content {
-        color: #c71585;  /* Rosado oscuro para el texto */
+    .css-1d391kg .sidebar-content {
+        color: #c71585 !important;  /* Rosado oscuro para el texto */
     }
     .css-1v3fvcr {
         color: #c71585;  /* Rosado oscuro para los encabezados del sidebar */
