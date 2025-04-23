@@ -4,7 +4,7 @@ from googletrans import Translator
 from streamlit_lottie import st_lottie
 import json
 
-# Estilos para fondo negro y texto blanco
+# Estilos para fondo negro y texto blanco, y personalización del sidebar
 st.markdown("""
     <style>
     .stApp {
@@ -15,8 +15,25 @@ st.markdown("""
         background-color: #333333;
         color: white;
     }
+    
+    /* Personalización del sidebar */
+    .css-18e3th9 {
+        background-color: #ffb6c1;  /* Rosado clarito */
+    }
+    .css-18e3th9 .sidebar-content {
+        color: #c71585;  /* Rosado oscuro para el texto */
+    }
+    .css-1v3fvcr {
+        color: #c71585;  /* Rosado oscuro para los encabezados del sidebar */
+    }
+
+    .sidebar .stImage {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
     </style>
-    """, unsafe_allow_html=True)
+""", unsafe_allow_html=True)
 
 translator = Translator()
 st.title('Uso de textblob')
@@ -24,9 +41,12 @@ st.title('Uso de textblob')
 st.subheader("Por favor escribe en el campo de texto la frase que deseas analizar")
 
 with st.sidebar:
+    # Cargar imagen "wawawa.png" en el sidebar
+    st.image('wawawa.png', use_column_width=True)
+    
     st.subheader("Polaridad y Subjetividad")
     st.markdown("""
-    <div style='color:white'>
+    <div style='color:#c71585'>
     <b>Polaridad:</b> Indica si el sentimiento expresado en el texto es positivo, negativo o neutral. 
     Su valor oscila entre -1 (muy negativo) y 1 (muy positivo), con 0 representando un sentimiento neutral.
     <br><br>
@@ -63,4 +83,3 @@ with st.expander('Analizar Polaridad y Subjetividad en un texto'):
             with open('neutral.json') as source:
                 animation = json.load(source)
                 st_lottie(animation, width=350)
-
