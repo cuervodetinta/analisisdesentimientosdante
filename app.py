@@ -24,7 +24,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 
-sidebar_css = 
+sidebar_css = """
     <style>
     /* Cambiar color de fondo del sidebar */
     .css-1d391kg {
@@ -42,7 +42,7 @@ sidebar_css =
     }
 
     </style>
-
+"""
 
 
 st.markdown(sidebar_css, unsafe_allow_html=True)
