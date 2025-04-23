@@ -2,14 +2,7 @@ import streamlit as st
 from textblob import TextBlob
 from googletrans import Translator
 from streamlit_lottie import st_lottie
-import requests
-
-# Función para cargar animaciones Lottie desde una URL
-def load_lottie_url(url: str):
-    r = requests.get(url)
-    if r.status_code != 200:
-        return None
-    return r.json()
+import json
 
 # Estilos para fondo negro y texto blanco
 st.markdown("""
@@ -26,7 +19,7 @@ st.markdown("""
     """, unsafe_allow_html=True)
 
 translator = Translator()
-st.title('Uso de TextBlob')
+st.title('Uso de textblob')
 
 st.subheader("Por favor escribe en el campo de texto la frase que deseas analizar")
 
@@ -52,18 +45,22 @@ with st.expander('Analizar Polaridad y Subjetividad en un texto'):
         polarity = round(blob.sentiment.polarity, 2)
         subjectivity = round(blob.sentiment.subjectivity, 2)
 
-        st.write('Polaridad:', polarity)
-        st.write('Subjetividad:', subjectivity)
+        st.write('Polarity: ', polarity)
+        st.write('Subjectivity: ', subjectivity)
 
         if polarity >= 0.5:
             st.write('Es un sentimiento Positivo 😊')
-            animation = load_lottie_url("https://assets10.lottiefiles.com/packages/lf20_happy.json")
-            st_lottie(animation, width=350)
+            with open('feliz.json') as source:
+                animation = json.load(source)
+                st_lottie(animation, width=350)
         elif polarity <= -0.5:
             st.write('Es un sentimiento Negativo 😔')
-            animation = load_lottie_url("https://assets10.lottiefiles.com/packages/lf20_sad.json")
-            st_lottie(animation, width=350)
+            with open('triste.json') as source:
+                animation = json.load(source)
+                st_lottie(animation, width=350)
         else:
             st.write('Es un sentimiento Neutral 😐')
-            animation = load_lottie_url("https://assets10.lottiefiles.com/packages/lf20_neutral.json")
-            st_lottie(animation, width=350)
+            with open('neutral.json') as source:
+                animation = json.load(source)
+                st_lottie(animation, width=350)
+
