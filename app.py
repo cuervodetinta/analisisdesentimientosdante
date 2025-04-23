@@ -4,7 +4,7 @@ from googletrans import Translator
 from streamlit_lottie import st_lottie
 import json
 
-# Estilos para fondo negro y texto blanco, y personalización del sidebar
+
 st.markdown("""
     <style>
     .stApp {
@@ -46,8 +46,8 @@ st.title('Uso de textblob')
 st.subheader("Por favor escribe en el campo de texto la frase que deseas analizar")
 
 with st.sidebar:
-    # Cargar imagen "wawawa.png" en el sidebar
-    st.image('wawawa.png', use_container_width=True)  # Cambié 'use_column_width' por 'use_container_width'
+
+    st.image('wawawa.png', use_container_width=True) 
     
     st.subheader("Polaridad y Subjetividad")
     st.markdown("""
@@ -61,7 +61,7 @@ with st.sidebar:
     """, unsafe_allow_html=True)
 
 with st.expander('Analizar Polaridad y Subjetividad en un texto'):
-    text1 = st.text_area('Escribe por favor: ')
+    text1 = st.text_area('Escribe por favor cómo te sientes en inglés preferiblemente: ')
     if text1:
         translation = translator.translate(text1, src="es", dest="en")
         trans_text = translation.text
@@ -74,17 +74,17 @@ with st.expander('Analizar Polaridad y Subjetividad en un texto'):
         st.write('Subjectivity: ', subjectivity)
 
         if polarity >= 0.5:
-            st.write('Es un sentimiento Positivo 😊')
+            st.write('Es un sentimiento Positivo YEIIII 😊')
             with open('feliz.json') as source:
                 animation = json.load(source)
                 st_lottie(animation, width=350)
         elif polarity <= -0.5:
-            st.write('Es un sentimiento Negativo 😔')
+            st.write('Es un sentimiento Negativo nuuuuu 😔')
             with open('triste.json') as source:
                 animation = json.load(source)
                 st_lottie(animation, width=350)
         else:
-            st.write('Es un sentimiento Neutral 😐')
+            st.write('Es un sentimiento Neutral zzz 😐')
             with open('neutral.json') as source:
                 animation = json.load(source)
                 st_lottie(animation, width=350)
