@@ -42,7 +42,7 @@ st.subheader("Por favor escribe en el campo de texto la frase que deseas analiza
 
 with st.sidebar:
     # Cargar imagen "wawawa.png" en el sidebar
-    st.image('wawawa.png', use_column_width=True)
+    st.image('wawawa.png', use_container_width=True)  # Cambié 'use_column_width' por 'use_container_width'
     
     st.subheader("Polaridad y Subjetividad")
     st.markdown("""
