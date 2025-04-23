@@ -16,12 +16,12 @@ st.markdown("""
         color: white;
     }
 
-    /* Personalización del sidebar */
+    /* Cambiar color de fondo del sidebar */
     .css-1d391kg {
         background-color: #ffb6c1 !important;  /* Rosado clarito */
     }
 
-    /* Personalizar el color del texto en el sidebar */
+    /* Cambiar color de texto en el sidebar */
     .css-1v3fvcr {
         color: #c71585;  /* Rosado oscuro para los encabezados del sidebar */
     }
@@ -29,11 +29,13 @@ st.markdown("""
     .css-1d391kg .sidebar-content {
         color: #c71585 !important;  /* Rosado oscuro para el texto */
     }
+    
     .stImage {
         display: block;
         margin-left: auto;
         margin-right: auto;
     }
+
     </style>
 """, unsafe_allow_html=True)
 
