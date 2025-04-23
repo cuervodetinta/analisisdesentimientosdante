@@ -4,7 +4,6 @@ from googletrans import Translator
 from streamlit_lottie import st_lottie
 import json
 
-# Estilos generales para la aplicación
 st.markdown("""
     <style>
     .stApp {
@@ -24,8 +23,8 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-# Estilos para el sidebar
-sidebar_css = """
+
+sidebar_css = ""
     <style>
     /* Cambiar color de fondo del sidebar */
     .css-1d391kg {
@@ -43,20 +42,20 @@ sidebar_css = """
     }
 
     </style>
-"""
+""
 
-# Insertar el CSS para el sidebar
+
 st.markdown(sidebar_css, unsafe_allow_html=True)
 
-# Inicialización de los elementos
+
 translator = Translator()
-st.title('Uso de textblob')
+st.title('TEXTBLOB')
 
 st.subheader("Por favor escribe en el campo de texto la frase que deseas analizar")
 
 with st.sidebar:
 
-    # Cargar la imagen en el sidebar
+ 
     st.image('wawawa.png', use_container_width=True) 
     
     st.subheader("Polaridad y Subjetividad")
